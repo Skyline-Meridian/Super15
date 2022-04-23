@@ -25,7 +25,7 @@ public class LoginService {
     public ResponseEntity<LoginResponse> login(LoginRequest loginRequest) {
         LoginResponse loginResponse = new LoginResponse();
         if (validateLoginRequest(loginRequest)) {
-            User user = userRepository.findByName(loginRequest.getUserName());
+            User user = userRepository.findByUserName(loginRequest.getUserName());
             if (user != null
                     && user.getPassword() != null
                     && user.getPassword().equals(loginRequest.getPassword())) {

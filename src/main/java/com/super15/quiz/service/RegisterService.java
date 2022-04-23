@@ -1,7 +1,6 @@
 package com.super15.quiz.service;
 
 import com.super15.quiz.dto.request.RegisterRequest;
-import com.super15.quiz.dto.response.LoginResponse;
 import com.super15.quiz.dto.response.RegisterResponse;
 import com.super15.quiz.model.User;
 import com.super15.quiz.repository.UserRepository;
@@ -34,6 +33,6 @@ public class RegisterService {
     }
 
     private boolean isUserExistByNameBefore(RegisterRequest registerRequest) {
-        return userRepository.findByName(registerRequest.getUserName()).isPresent();
+        return userRepository.findByUserName(registerRequest.getUserName()) != null ? true : false;
     }
 }

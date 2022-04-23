@@ -2,12 +2,11 @@ package com.super15.quiz.repository;
 
 import com.super15.quiz.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.stereotype.Repository;
 
-import java.util.Optional;
+@Repository
+public interface UserRepository extends JpaRepository<User, Long> {
 
-public interface UserRepository extends JpaRepository {
-
- public User findByName(String name);
+ public User findByUserName(String name);
 
 }
