@@ -23,6 +23,8 @@ public class User implements UserDetails {
 
     private String email;
 
+    private String mobileNumber;
+
     public long getId() {
         return id;
     }
@@ -91,5 +93,13 @@ public class User implements UserDetails {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getMobileNumber() {
+        return mobileNumber;
+    }
+
+    public void setMobileNumber(String mobileNumber) {
+        this.mobileNumber = mobileNumber;
     }
 }
